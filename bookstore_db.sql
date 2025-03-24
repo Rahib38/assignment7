@@ -14,7 +14,7 @@ DROP Table customers;
 CREATE table customers(
     customer_id SERIAL PRIMARY KEY,
     customer_name VARCHAR(50),
-    customer_email VARCHAR(255) NOT NULL,
+    customer_email VARCHAR(255) UNIQUE NOT NULL,
     joined_date DATE DEFAULT CURRENT_DATE
 );
 
