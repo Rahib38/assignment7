@@ -1,6 +1,6 @@
-নিশ্চিত! আমি আপনার জন্য ৮, ৯, এবং ১০ নম্বর প্রশ্নের উত্তরও **README.md** ফাইলের মধ্যে সাজিয়ে দিলাম:
 
-```markdown
+
+
 # PostgreSQL - Basic Concepts and Queries
 
 This document contains answers to some fundamental questions about PostgreSQL.
