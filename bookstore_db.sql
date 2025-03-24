@@ -68,3 +68,44 @@ SELECT *,price from books
     ORDER BY price
     DESC
     LIMIT 1;
+
+
+-- 3️⃣ Find the total number of orders placed by each customer.
+
+SELECT c.customer_name, COUNT(*) AS total_orders
+FROM customers c
+JOIN orders o ON c.customer_id = o.customer_id
+GROUP BY c.customer_name;
+
+
+
+-- 4️⃣ Calculate the total revenue generated from book sales.
+
+SELECT  sum(price) AS total_revenue FROM books;
+
+
+-- 5️⃣ List all customers who have placed more than one order.
+
+SELECT c.customer_name, COUNT(*) AS total_count
+FROM customers c
+JOIN orders o ON c.customer_id = o.customer_id
+GROUP BY c.customer_name
+HAVING count(*) > 1;
+
+
+-- 6️⃣ Find the average price of books in the store.
+
+SELECT  round(avg(price),2) AS avg_book_price FROM books;
+
+
+
+-- 7️⃣ Increase the price of all books published before 2000 by 10%.
+
+UPDATE books
+SET price = price * 1.10
+WHERE published_year <2000;
+
+-- 8️⃣ Delete customers who haven't placed any orders.
+
+DELETE FROM customers
+WHERE customer_id NOT IN (SELECT DISTINCT customer_id FROM orders);
