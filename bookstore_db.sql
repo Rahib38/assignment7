@@ -81,7 +81,8 @@ GROUP BY c.customer_name;
 
 -- 4️⃣ Calculate the total revenue generated from book sales.
 
-SELECT  sum(price) AS total_revenue FROM books;
+SELECT  sum(b.price * o.quantity) AS total_revenue FROM orders o
+JOIN books b on o.book_id = b.book_id;
 
 
 -- 5️⃣ List all customers who have placed more than one order.
