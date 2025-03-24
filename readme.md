@@ -1,10 +1,4 @@
 
-
-
-# PostgreSQL - Basic Concepts and Queries
-
-This document contains answers to some fundamental questions about PostgreSQL.
-
 ## 1. What is PostgreSQL?
 **PostgreSQL** হল একটি ওপেন সোর্স রিলেশনাল ডাটাবেস ম্যানেজমেন্ট সিস্টেম (RDBMS), যা ডেটা সঞ্চয় এবং পরিচালনা করতে ব্যবহৃত হয়। এটি SQL (Structured Query Language) ব্যবহার করে ডেটাবেসে ডেটা প্রবেশ, আপডেট, মুছে ফেলা এবং প্রশ্ন করা যায়। PostgreSQL অত্যন্ত শক্তিশালী এবং স্কেলেবল ডাটাবেস সিস্টেম।
 
