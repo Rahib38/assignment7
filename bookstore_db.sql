@@ -1,4 +1,4 @@
--- Active: 1742195770280@@127.0.0.1@5432@bookstore_db
+-- Active: 1742195770280@@127.0.0.1@5432@bookstore_db@public
 CREATE table books(
     book_id SERIAL PRIMARY KEY,
     title VARCHAR(100),
@@ -9,6 +9,7 @@ CREATE table books(
 );
 
 DROP Table books;
+DROP Table customers;
 
 CREATE table customers(
     customer_id SERIAL PRIMARY KEY,
@@ -53,3 +54,17 @@ INSERT INTO orders ( customer_id, book_id, quantity, order_date)
 SELECT * FROM books;
 SELECT * FROM customers;
 SELECT * FROM orders;
+
+
+-- 1️⃣ Find books that are out of stock.
+
+SELECT title from books
+    WHERE stock=0;
+
+
+-- 2️⃣ Retrieve the most expensive book in the store.
+
+SELECT *,price from books 
+    ORDER BY price
+    DESC
+    LIMIT 1;
