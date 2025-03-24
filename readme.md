@@ -1,3 +1,6 @@
+নিশ্চিত! আমি আপনার জন্য ৮, ৯, এবং ১০ নম্বর প্রশ্নের উত্তরও **README.md** ফাইলের মধ্যে সাজিয়ে দিলাম:
+
+```markdown
 # PostgreSQL - Basic Concepts and Queries
 
 This document contains answers to some fundamental questions about PostgreSQL.
@@ -31,8 +34,9 @@ PostgreSQL-এ **ডাটাবেস স্কিমা** হল একটি 
 
 ```sql
 UPDATE customers SET email = 'newemail@example.com' WHERE id = 1;
+```
 
-## 8. What is the significance of the **JOIN** operation, and how does it work in PostgreSQL?
+## 8. What is the significance of the JOIN operation, and how does it work in PostgreSQL?
 **JOIN** অপারেশনটি বিভিন্ন টেবিলের মধ্যে সম্পর্ক তৈরি করে এবং একসাথে ডেটা প্রদান করে। এটি সম্পর্কিত টেবিলগুলির মধ্যে ডেটা সংযুক্ত করার জন্য ব্যবহৃত হয়। PostgreSQL-এ বিভিন্ন ধরনের JOIN (যেমন INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN) রয়েছে।
 
 উদাহরণ:
@@ -41,3 +45,28 @@ UPDATE customers SET email = 'newemail@example.com' WHERE id = 1;
 SELECT customers.name, orders.order_date
 FROM customers
 JOIN orders ON customers.id = orders.customer_id;
+```
+
+## 9. Explain the GROUP BY clause and its role in aggregation operations.
+**GROUP BY** ক্লজটি SQL-এ ডেটা গ্রুপ করার জন্য ব্যবহৃত হয়, যাতে আমরা গ্রুপের উপর বিভিন্ন অ্যাগ্রিগেট ফাংশন (যেমন COUNT, SUM, AVG) প্রয়োগ করতে পারি। এটি মূলত গ্রুপ ভিত্তিক বিশ্লেষণ করতে সাহায্য করে।
+
+উদাহরণ:
+
+```sql
+SELECT customer_id, COUNT(*) 
+FROM orders 
+GROUP BY customer_id;
+```
+
+## 10. How can you calculate aggregate functions like COUNT(), SUM(), and AVG() in PostgreSQL?
+- **COUNT()**: এটি নির্দিষ্ট কলামের রেকর্ডের সংখ্যা গণনা করে।
+- **SUM()**: এটি নির্দিষ্ট কলামের সমস্ত মানের যোগফল বের করে।
+- **AVG()**: এটি নির্দিষ্ট কলামের গড় (average) মান বের করে।
+
+উদাহরণ:
+
+```sql
+SELECT COUNT(*) FROM orders;
+SELECT SUM(price) FROM books;
+SELECT AVG(price) FROM books;
+```
