@@ -31,3 +31,13 @@ PostgreSQL-এ **ডাটাবেস স্কিমা** হল একটি 
 
 ```sql
 UPDATE customers SET email = 'newemail@example.com' WHERE id = 1;
+
+## 8. What is the significance of the **JOIN** operation, and how does it work in PostgreSQL?
+**JOIN** অপারেশনটি বিভিন্ন টেবিলের মধ্যে সম্পর্ক তৈরি করে এবং একসাথে ডেটা প্রদান করে। এটি সম্পর্কিত টেবিলগুলির মধ্যে ডেটা সংযুক্ত করার জন্য ব্যবহৃত হয়। PostgreSQL-এ বিভিন্ন ধরনের JOIN (যেমন INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN) রয়েছে।
+
+উদাহরণ:
+
+```sql
+SELECT customers.name, orders.order_date
+FROM customers
+JOIN orders ON customers.id = orders.customer_id;
